@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: "Mulish", sans-serif;
+  --color-base-pink: #b52184;
+  --color-base-purple: #312d64;
+  --color-base-white: #ffffff;
+}
+#app {
+  display: grid;
+  grid-template-rows: max-content;
+  max-width: 43.6rem;
+  margin-inline: auto;
+  box-sizing: content-box;
+  border: 3px solid red;
+  overflow: hidden;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.astro {
+  width: 90%;
+  margin: 0rem 3.4rem 1.7rem 3.2rem;
+}
+
+h1 {
+  height: 4rem;
+  color: var(--color-base-pink);
+  font-weight: 900;
+  font-size: 3.2rem;
+}
+
+.home p {
+  height: 1.6rem;
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.home button {
+  display: flex;
+  border: 0;
+  background: none;
+}
+
+.home button img {
+  width: 5.8rem;
+  height: 10.5rem;
+}
+
+.articles {
+  background: var(--color-base-purple);
+  height: 124.2rem;
+
+  padding: 5.2rem 3.9rem 4.9rem 3.9rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-bottom: 4.9rem;
+  padding: 2.6rem;
+
+  background-color: var(--color-base-white);
+  height: 33.7rem;
+  border-radius: 1.9rem;
+}
+
+.content img {
+  height: 8rem;
+}
+
+.content p {
+  width: 26.5rem;
+  font-weight: 450;
+  font-size: 1.6rem;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+}
+
+.input-wrapper {
+  margin: 6.9rem 4rem 7.4rem 4rem;
+}
+
+.input-wrapper input {
+  font-size: 1.6rem;
+  padding-left: 4rem;
+
+  width: 100%;
+
+  border-radius: 1.6rem;
+  height: 4.8rem;
+  margin-top: 2.6rem;
+  color: var(--color-base-purple);
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-wrapper-name::before {
+  content: url("./assets/icon-perso.svg"); /* URL da sua imagem */
+  position: absolute;
+  margin: 3.5rem 0rem 0rem 1.5rem;
+}
+.input-wrapper-email::before {
+  content: url("./assets/@.svg");
+  position: absolute;
+  margin: 4rem 0rem 0rem 1.5rem;
+}
+
+#custom {
+  height: 12.6rem;
+  padding: 0rem 0rem 7rem 1.6rem;
+}
+
+.input-wrapper button {
+  height: 4.5rem;
+  display: flex;
+  padding: 1.6rem;
+  margin-top: 2.4rem;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--color-base-white);
+  background-color: var(--color-base-purple);
+  border-radius: 1.6rem;
+
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2rem;
+  height: 7.8rem;
+
+  color: var(--color-base-white);
+  background-color: var(--color-base-purple);
+}
+
+@media (min-width: 770px) {
+  #app {
+    display: grid;
+    grid-template-rows: max-content;
+    max-width: 100%;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .astro {
+    width: 40%;
+  }
+  .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2.8rem;
+    margin-top: 20rem;
+
+    align-items: flex-start;
+  }
+
+  .text-wrapper button {
+    margin-top: 10.9rem;
+  }
+
+  .articles {
+    display: flex;
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content {
+    margin-left: 6rem;
+  }
+
+  .contact {
+    background: url(./assets/fundo.png);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+  .input-wrapper {
+    width: 59.2rem;
+  }
+}
+
+footer {
+  animation: fromBot 600ms;
+}
+
+@keyframes fromBot {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.astro {
+  animation: appear 0.4s 0.8s backwards;
+}
+
+.content {
+  --delay: 0.4s;
+  animation: appear 8s, var(--delay) forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
